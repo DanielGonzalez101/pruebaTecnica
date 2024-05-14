@@ -1,0 +1,883 @@
+body {
+  font-family: 'Roboto', sans-serif;
+}
+
+/* Reset the margin and padding of all elements to ensure no unwanted spacing */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; /* Ensures padding and borders are included in the total width and height */
+}
+
+/* Navbar specific styling */
+.navbar {
+  background-color: #000000; /* Dark grey background */
+  width: 100%; /* Ensure navbar takes full width */
+  display: flex; /* Using flexbox to align children elements */
+  align-items: center; /* Center items vertically within navbar */
+  position: fixed; /* Fixes navbar at the top of the viewport */
+  top: 0; /* Align the top edge of the navbar with the top edge of the viewport */
+  left: 0; /* Align the left edge of the navbar with the left edge of the viewport */
+  z-index: 1000; /* Ensures navbar stays on top of other content */
+}
+
+#imagenNav {
+  height: 100px; /* Example fixed height for your logo */
+  width: auto; /* Maintain aspect ratio */
+  margin: 1%;
+  margin-left: 0.5%; /* Slight margin to keep the logo from the very edge */
+}
+
+/* Responsive adjustments */
+@media screen and (max-width: 600px) {
+  #imagenNav {
+    height: 60px; /* Smaller height for logo on smaller screens */
+  }
+}
+
+/* Padding to body to prevent content hiding behind the navbar */
+body {
+  padding-top: 120px; /* Adjust this value based on the actual height of your navbar */
+}
+
+#btn-asesoramos {
+  background-color: #f8ac3e;
+  font-size: x-large;
+  border-radius: 0; /* Use '0' instead of 'none' for border-radius */
+  margin-left: 60%;
+  border: none; /* Use 'border: none;' to ensure no border is displayed */
+  transition: transform 0.3s ease-in-out; /* Smooth transformation over 0.3 seconds */
+  padding: 0.5%;
+}
+
+#btn-asesoramos:hover {
+  transform: scale(1.05); /* Slightly enlarge the button on hover */
+}
+
+@media screen and (max-width: 600px) {
+  #btn-asesoramos {
+    font-size: large; /* Adjust font size for smaller screens */
+    margin-left: 10%;
+    margin-right: 10%;
+    width: 80%; /* Make the button wider on smaller screens to improve tapability */
+    margin-right: 0.5%;
+  }
+}
+
+/* Estilo base para contenedor de texto e imagen */
+.contenedor-texto-formulario {
+  display: flex; /* Establece Flexbox */
+  justify-content: space-between; /* Separa los elementos */
+  align-items: center; /* Alinea verticalmente */
+  background-image: url('images/entorno-de-trabajo.jpeg');
+  background-size: cover;
+  background-position: center;
+  color: white;
+  height: fit-content;
+  text-align: left; /* Alineación de texto a la izquierda para el contenido */
+  padding: 0 5%; /* Padding para no pegar el contenido a los bordes */
+  margin-top: -100px;
+  /* margin-bottom: 100px; */
+}
+
+/* Estilo base para título */
+#texto-titulo {
+  font-size: 4em;
+  margin-top: 10px;
+  text-transform: uppercase;
+  line-height: 1.2;
+}
+
+/* Estilo base para párrafo */
+#texto-parrafo {
+  font-size: 2em;
+  max-width: fit-content;
+  margin: 0 auto;
+}
+
+/* Estilo base para el contenedor de texto */
+.texto-contenedor {
+  width: 50%;
+  margin-top: 5%;
+  margin-bottom: 0%;
+  height: fit-content;
+}
+
+/* Media Queries para dispositivos pequeños */
+@media (max-width: 768px) {
+  #texto-titulo {
+    font-size: 3em; /* Tamaño de fuente más pequeño para el título */
+  }
+
+  #texto-parrafo {
+    font-size: 1.5em; /* Tamaño de fuente más pequeño para el párrafo */
+    max-width: 90%; /* Mayor ancho para mejorar la legibilidad */
+  }
+
+  .texto-contenedor {
+    width: 80%; /* Mayor ancho para el contenedor de texto */
+    margin-left: 10%; /* Ajuste del margen para centrar el contenido */
+  }
+
+  .contenedor-texto-formulario {
+    height: auto; /* Altura auto para acomodar contenido más extenso */
+    padding: 20px 0; /* Padding adicional para no cortar el texto */
+    margin-top: -60px; /* Ajuste del margen superior según la nueva altura del navbar */
+  }
+}
+
+/* Media Queries para dispositivos muy pequeños (teléfonos móviles) */
+@media (max-width: 480px) {
+  #texto-titulo {
+    font-size: 2.5em; /* Tamaño aún más pequeño para el título */
+  }
+
+  #texto-parrafo {
+    font-size: 1.2em; /* Tamaño de fuente más pequeño para mejorar la legibilidad en teléfonos */
+  }
+
+  .texto-contenedor {
+    width: 95%; /* Ajuste de ancho para maximizar espacio utilizable */
+    margin-left: 2.5%; /* Centrar el contenido dentro de la pantalla */
+  }
+}
+
+.contenedor-formulario {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Alinea los elementos internos en el centro horizontalmente */
+  justify-content: center; /* Alinea los elementos internos en el centro verticalmente */
+  width: 30%; /* Ancho para el formulario */
+  background-color: black; /* Fondo semitransparente para mejorar la visibilidad */
+  padding: 20px;
+  color: white; /* Para mejor contraste de texto */
+  margin-top: 10%;
+}
+
+@media (max-width: 1024px) {
+  .contenedor-texto-formulario {
+    flex-direction: column; /* Cambia a diseño vertical en pantallas pequeñas */
+    height: auto;
+  }
+
+  .texto-contenedor,
+  .contenedor-formulario {
+    width: 100%; /* Ocupa todo el ancho disponible */
+    margin-bottom: 20px; /* Espacio entre elementos */
+    margin-top: 10px;
+  }
+
+  .contenedor-formulario {
+    width: fit-content; /* Ajusta el ancho del formulario al contenido interno en pantallas pequeñas */
+  }
+}
+
+#input-form {
+  width: 90%; /* Ancho de los inputs respecto al contenedor */
+  margin-bottom: 2%; /* Espacio entre inputs */
+  height: 2.5em;
+  font-size: large;
+  padding-left: 1%;
+}
+
+#titulo-form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+#btn-enviar {
+  background-color: #f8ac3e;
+  font-size: x-large;
+  border-radius: 0; /* Use '0' instead of 'none' for border-radius */
+  border: none; /* Use 'border: none;' to ensure no border is displayed */
+  transition: transform 0.3s ease-in-out; /* Smooth transformation over 0.3 seconds */
+  border: none;
+  border-radius: 5px;
+  padding: 3%;
+}
+
+#btn-enviar:hover {
+  transform: scale(1.05); /* Slightly enlarge the button on hover */
+}
+
+.contenedor-titulo-form {
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding-top: 2%;
+  margin-bottom: 2%;
+}
+
+#titulo-form {
+  margin: 0 0 20px 0; /* Elimina todos los márgenes excepto el inferior */
+  padding: 0; /* No hay relleno adicional */
+  width: 100%; /* Ocupa todo el ancho del contenedor */
+  font-weight: bold; /* Fuente en negrita */
+  text-align: center; /* Alinea el texto al centro */
+}
+
+@media (max-width: 768px) {
+  #titulo-form {
+    font-size: 1.5em; /* Reduce el tamaño de la fuente en tablets y dispositivos menores */
+  }
+}
+
+@media (max-width: 480px) {
+  #titulo-form {
+    font-size: 1.2em; /* Reduce aún más el tamaño de la fuente para teléfonos móviles */
+    margin-bottom: 10px; /* Reduce el margen inferior para ahorrar espacio */
+  }
+}
+
+.contenedor-especializarte {
+  display: flex; /* Añadido para asegurar que flexbox esté activado */
+  flex-direction: column; /* Orientación vertical de los elementos */
+  width: 100%; /* Ancho completo del viewport */
+  padding: 20px 40px; /* Padding para no pegar el texto a los bordes */
+  background-color: white; /* Fondo blanco para el contenedor */
+  justify-content: center; /* Centra los elementos verticalmente */
+  align-items: center; /* Centra los elementos horizontalmente */
+}
+
+#especializarte-titulo {
+  font-size: 2em; /* Tamaño de fuente para el título */
+  color: #333; /* Color de fuente oscuro para mejor legibilidad */
+  text-align: center; /* Centrado del título */
+  margin-bottom: 20px; /* Espacio después del título */
+}
+
+#especializarte-parrafo {
+  text-align: justify; /* Justifica el texto del párrafo */
+  line-height: 1.6; /* Espaciado de línea para mejor legibilidad */
+  font-size: 1em; /* Tamaño de la fuente del párrafo */
+  color: #666; /* Color gris para el texto, menos intenso que el título */
+  width: 90%; /* Controla el ancho del texto para evitar líneas muy largas */
+}
+
+/* Media Queries para adaptarse a diferentes tamaños de pantalla */
+@media (max-width: 768px) {
+  #especializarte-titulo {
+    font-size: 1.5em; /* Reduce el tamaño de la fuente en dispositivos más pequeños */
+  }
+
+  #especializarte-parrafo {
+    font-size: 0.9em; /* Reduce el tamaño de la fuente del párrafo */
+  }
+
+  .contenedor-especializarte {
+    padding: 10px 20px; /* Reduce el padding para más espacio en pantallas pequeñas */
+  }
+}
+
+@media (max-width: 480px) {
+  #especializarte-titulo {
+    font-size: 1.2em; /* Tamaño aún más pequeño para teléfonos móviles */
+  }
+
+  #especializarte-parrafo {
+    font-size: 0.8em; /* Tamaño de fuente más pequeño para mejorar la legibilidad */
+    text-align: left; /* Cambia la justificación a izquierda para evitar espaciado irregular */
+  }
+
+  .contenedor-especializarte {
+    padding: 5px 10px; /* Menor padding para maximizar el espacio disponible */
+  }
+}
+
+.contenedor-filtros {
+  display: flex;
+  justify-content: space-around;
+  padding: 20px;
+  background-color: #f8f8f8; /* Un fondo claro para diferenciar la sección */
+  margin-top: 20px; /* Espacio después del texto anterior */
+  flex-wrap: wrap; /* Permite que los filtros se ajusten y envuelvan según el ancho disponible */
+}
+
+.filtro {
+  display: flex;
+  flex-direction: column;
+  flex-basis: 30%; /* Define una base pero permite flexibilidad */
+  min-width: 250px; /* Asegura que los filtros no se vuelvan demasiado pequeños */
+  margin: 10px; /* Espaciado entre filtros para no pegarse cuando se envuelven */
+}
+
+.filtro label {
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.filtro select {
+  padding: 8px;
+  border-radius: 5px;
+  border: 1px solid #000000;
+  width: 100%; /* Hace que el select ocupe todo el espacio disponible en su contenedor */
+  cursor: pointer;
+}
+
+/* Media Queries para dispositivos más pequeños */
+@media (max-width: 768px) {
+  .filtro {
+    flex-basis: 50%; /* Ajusta dos filtros por fila en pantallas medianas */
+  }
+}
+
+@media (max-width: 480px) {
+  .filtro {
+    flex-basis: 100%; /* Ajusta a una sola columna en pantallas pequeñas */
+  }
+}
+
+.card {
+  width: 100%;
+  max-width: 350px; /* Límite de ancho de la card */
+  background-color: white;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin: 20px;
+  font-family: Arial, sans-serif; /* Asegúrate de que la fuente Roboto está cargada si prefieres usarla */
+}
+
+.card-header {
+  background-color: black;
+  color: white;
+  padding: 10px;
+  font-size: 1.25em;
+  text-align: center;
+}
+
+.card-body {
+  padding: 20px;
+  text-align: left;
+}
+
+.card-body h2 {
+  color: red; /* Color rojo para el título */
+  margin-bottom: 15px;
+}
+
+.card-body p {
+  font-size: 0.95em;
+  line-height: 1.4;
+  margin-bottom: 20px;
+}
+
+.btn-info {
+  background-color: red;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  width: 100%;
+  cursor: pointer;
+  text-transform: uppercase;
+  font-weight: bold;
+  border-radius: 5px; /* Bordes redondeados para el botón */
+}
+
+.btn-info:hover {
+  background-color: darkred;
+}
+
+@media (max-width: 600px) {
+  .card {
+    margin: 10px;
+    font-size: 0.9em; /* Ajusta el tamaño del texto para pantallas pequeñas */
+  }
+
+  .btn-info {
+    padding: 8px 16px;
+  }
+}
+
+.card-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center; /* Centra las tarjetas horizontalmente */
+  margin: 0 auto; /* Centra el contenedor en la página */
+  width: 70%;
+  gap: 20px; /* Espacio entre las tarjetas */
+  padding: 20px; /* Espacio alrededor del contenedor */
+}
+
+.card {
+  width: calc(
+    33.33% - 20px
+  ); /* Calcula el ancho para 3 tarjetas por fila, restando el gap */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px; /* Espacio adicional en la parte inferior si hay más filas */
+  background-color: white; /* Fondo blanco para las tarjetas */
+}
+
+.card-header {
+  background-color: black;
+  color: white;
+  padding: 10px;
+  font-size: 1.25em;
+  text-align: center;
+}
+
+.card-body {
+  padding: 20px;
+  text-align: left;
+}
+
+.card-body h2 {
+  color: red; /* Color rojo para el título */
+  margin-bottom: 15px;
+}
+
+.card-body p {
+  font-size: 0.95em;
+  line-height: 1.4;
+  margin-bottom: 20px;
+}
+
+.btn-info {
+  background-color: red;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  width: 100%; /* Botón que se ajusta al ancho de la tarjeta */
+  cursor: pointer;
+  text-transform: uppercase;
+  font-weight: bold;
+  border-radius: 5px;
+}
+
+.btn-info:hover {
+  background-color: darkred;
+}
+
+@media (max-width: 1024px) {
+  .card {
+    width: calc(
+      50% - 20px
+    ); /* Dos tarjetas por fila en tablets y dispositivos más grandes */
+  }
+}
+
+@media (max-width: 768px) {
+  .card {
+    width: 100%; /* Una tarjeta por fila en dispositivos móviles */
+  }
+}
+
+.seccion5 {
+  background-color: #000000;
+  color: #fff;
+  padding-bottom: 150px;
+}
+
+.container.benefits-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 30px;
+  padding: 20px;
+}
+
+.header {
+  text-align: center;
+  margin-top: 30px;
+  margin-bottom: 40px;
+}
+
+.benefits {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 30px;
+  justify-content: center;
+}
+
+.benefits-section {
+  position: relative;
+  background-color: transparent;
+  box-shadow: none;
+  border: none;
+  overflow: hidden;
+  padding: 40px;
+  padding-top: 0;
+  padding-left: 22px;
+}
+
+.benefits-section h2 {
+  margin-bottom: 35px;
+}
+
+.benefits-section::before,
+.benefits-section::after {
+  content: '';
+  position: absolute;
+  background-color: #fff;
+}
+
+.benefits-section::before {
+  bottom: 0;
+  left: 0;
+  width: 92%;
+  height: 1px;
+}
+
+.benefits-section::after {
+  right: 0;
+  top: 0;
+  width: 1px;
+  height: 90%;
+}
+
+.benefits .benefits-section:nth-child(n + 4) {
+  border-bottom: none;
+}
+
+.custom-benefits::after,
+.custom-benefits::before {
+  content: '';
+  position: absolute;
+  background-color: #000000;
+}
+
+.custom-benefits2::before {
+  content: '';
+  position: absolute;
+  background-color: #000000;
+}
+
+.custom-benefits3::before {
+  content: '';
+  position: absolute;
+  background-color: #000000;
+}
+
+.custom-benefits4::after {
+  content: '';
+  position: absolute;
+  background-color: #000000;
+}
+
+.logos {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding-left: 0;
+}
+
+.logos li {
+  margin-right: 10px;
+  list-style: none;
+  margin-top: 20px;
+  margin-bottom: 15px;
+}
+
+.logos img {
+  width: 135px;
+  height: 45;
+}
+
+.seccion6 {
+  display: flex; /* This will enable flexbox */
+  justify-content: center; /* Center horizontally */
+  align-items: center; /* Center vertically */
+}
+
+.seccion6 .container {
+  background-image: url('images/imagenOscura.webp'); /* Ensure this URL points to the correct image */
+  background-size: cover;
+  text-align: center;
+  justify-content: center;
+  width: 70%; /* Adjusted to full width for better responsiveness */
+  color: white;
+  margin-top: -100px; /* Adjusted margin for better alignment */
+  padding-bottom: 40px;
+}
+
+.seccion6-header {
+  padding-top: 70px;
+}
+
+.tittle-seccion6 {
+  font-weight: bold;
+  margin-bottom: 40px;
+}
+
+.row.custom-row {
+  display: flex;
+  justify-content: space-around; /* This will evenly space the stat blocks */
+  flex-wrap: wrap; /* Allows wrapping on smaller screens */
+  margin-top: 20px; /* Reduced margin for better layout control */
+}
+
+.stat-block {
+  width: 20%; /* Adjusted width for each block */
+  min-width: 250px; /* Ensures blocks don't become too small on narrow screens */
+  margin: 10px; /* Adds spacing around each block */
+}
+
+.stat-block h1 {
+  font-weight: bold;
+  margin: 0;
+}
+
+.stat-block p {
+  margin-left: 35px;
+  width: 90%; /* Adjusted width for better text control */
+}
+
+.row.custom-row {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  margin-top: 20px;
+}
+
+.stat-block {
+  width: 20%;
+  min-width: 250px;
+  margin: 10px;
+}
+
+.stat-block h1 {
+  font-weight: bold;
+  margin: 0;
+}
+
+.stat-block p {
+  margin: 10px 0;
+}
+
+/* Section similar to the provided image */
+.info-section {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  text-align: center;
+  padding: 40px 20px;
+  flex-wrap: wrap;
+}
+
+.info-box {
+  flex: 1 1 calc(25% - 20px);
+  padding: 20px;
+  margin: 10px;
+}
+
+.info-box img {
+  width: 50px;
+  height: auto;
+}
+
+.info-box h3 {
+  margin: 20px 0 10px;
+  font-size: 1.2em;
+}
+
+.info-box p {
+  color: #555;
+}
+
+@media (max-width: 768px) {
+  .info-box {
+    flex: 1 1 calc(50% - 20px);
+  }
+}
+
+@media (max-width: 480px) {
+  .info-box {
+    flex: 1 1 100%;
+  }
+}
+
+.banner-section {
+  position: relative;
+  width: 100%;
+  height: 500px;
+  background-image: url(images/imagenOscura.webp);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  text-align: center;
+  padding: 15%;
+}
+
+.banner-content h1 {
+  font-size: 2.5em;
+  margin-bottom: 20px;
+}
+
+.banner-content p {
+  font-size: 1.2em;
+  line-height: 1.5;
+}
+
+@media (max-width: 768px) {
+  .banner-content h1 {
+    font-size: 2em;
+  }
+
+  .banner-content p {
+    font-size: 1em;
+  }
+}
+
+@media (max-width: 480px) {
+  .banner-content h1 {
+    font-size: 1.5em;
+  }
+
+  .banner-content p {
+    font-size: 0.9em;
+  }
+}
+
+/* Nueva sección de instituciones */
+.instituciones-section {
+  text-align: center;
+  padding: 40px 20px;
+  background-color: #f8f8f8;
+}
+
+.instituciones-section h2 {
+  font-size: 2em;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.instituciones-container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.institucion-card {
+  background: #fff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  overflow: hidden;
+  max-width: 300px;
+  text-align: left;
+}
+
+.institucion-card img {
+  width: 100%;
+  height: auto;
+}
+
+.institucion-card p {
+  padding: 20px;
+  color: #555;
+}
+
+.cta {
+  display: inline-block;
+  margin: 30px auto;
+  padding: 10px 20px;
+  background: linear-gradient(to right, #ff7e5f, #feb47b);
+  color: #fff;
+  text-decoration: none;
+  border-radius: 5px;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+@media (max-width: 768px) {
+  .institucion-card {
+    max-width: 100%;
+  }
+}
+
+/* Carousel styles */
+.container-carrusel {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.carousel {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.carousel-inner {
+  display: flex;
+  transition: transform 0.5s ease;
+}
+
+.carousel-item {
+  min-width: 100%;
+  position: relative;
+}
+
+.carousel-item img {
+  width: 100%;
+  display: block;
+}
+
+.carousel-caption {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  right: 20px;
+  color: white;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.8);
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 20px;
+}
+
+.carousel-caption blockquote {
+  margin: 0;
+  font-size: 1.2em;
+}
+
+.carousel-caption .cta-button {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 10px 20px;
+  background: linear-gradient(to right, #ff7e5f, #feb47b);
+  color: white;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+.carousel-control {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 2em;
+  color: white;
+  background-color: rgba(0, 0, 0, 0.5);
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+}
+
+.carousel-control.prev {
+  left: 10px;
+}
+
+.carousel-control.next {
+  right: 10px;
+}
+
+.footer {
+  background-color: black; /* Background color */
+  color: white; /* Text color */
+  text-align: center; /* Center text alignment */
+  padding: 20px 0; /* Vertical padding */
+  width: 100%; /* Full width */
+  bottom: 0; /* Align to the bottom */
+  left: 0; /* Align to the left */
+}
+
+.footer p {
+  margin: 0; /* Remove default margin */
+  font-weight: bold; /* Bold text */
+  font-size: 1.2em; /* Font size */
+}
